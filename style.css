@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  background: linear-gradient(90deg, #fdbb2d 0%, #22c1c3 100%);
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.centercontainer {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row;
+  max-width: 40%;
+  box-shadow: 10px 5px 5px rgba(152, 152, 152);
+}
