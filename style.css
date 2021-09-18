@@ -16,17 +16,186 @@ body {
 
 .container {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
+  position: relative;
   background: linear-gradient(90deg, #fdbb2d 0%, #22c1c3 100%);
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
+}
+.left__logo {
+  position: absolute;
 }
 
-.centercontainer {
-  margin: 0 auto;
+.right__award {
+  position: absolute;
+}
+
+.tabs {
   display: flex;
-  flex-flow: row;
-  max-width: 40%;
-  box-shadow: 10px 5px 5px rgba(152, 152, 152);
+}
+.tabs li {
+  /* Makes a horizontal row */
+
+  /* So the psueudo elements can be
+     abs. positioned inside */
+  position: relative;
+  list-style: none;
+}
+.tabs a {
+  /* Make them block level
+     and only as wide as they need */
+  float: left;
+  padding: 10px 40px;
+  text-decoration: none;
+
+  /* Default colors */
+  color: black;
+  background: #ddc385;
+
+  /* Only round the top corners */
+  -webkit-border-top-left-radius: 15px;
+  -webkit-border-top-right-radius: 15px;
+  -moz-border-radius-topleft: 15px;
+  -moz-border-radius-topright: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.tabs .active {
+  /* Highest, active tab is on top */
+  z-index: 3;
+}
+.tabs .active a {
+  /* Colors when tab is active */
+  background: white;
+  color: black;
+}
+.tabs li:before,
+.tabs li:after,
+.tabs li a:before,
+.tabs li a:after {
+  /* All pseudo elements are 
+     abs. positioned and on bottom */
+  position: absolute;
+  bottom: 0;
+}
+
+.tabs .active:before,
+.tabs .active:after {
+  background: white;
+
+  /* Squares below circles */
+  z-index: 1;
+}
+/* Squares */
+.tabs li:before,
+.tabs li:after {
+  background: #ddc385;
+  width: 10px;
+  height: 10px;
+}
+.tabs li:before {
+  left: -10px;
+}
+.tabs li:after {
+  right: -10px;
+}
+/* Circles */
+.tabs li a:after,
+.tabs li a:before {
+  width: 20px;
+  height: 20px;
+  /* Circles are circular */
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background: #222;
+
+  /* Circles over squares */
+  z-index: 2;
+}
+.tabs .active a:after,
+.tabs .active a:before {
+  background: #ddc385;
+}
+/* First and last tabs have different
+   outside color needs */
+.tabs li:first-child.active a:before,
+.tabs li:last-child.active a:after {
+  background: #222;
+}
+.tabs li a:before {
+  left: -20px;
+}
+.tabs li a:after {
+  right: -20px;
+}
+
+.content {
+  background: white;
+  width: 100%;
+  height: 300px;
+}
+
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.ticker-wrap {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 4rem;
+  background-color: rgba(rgb(10, 10, 10), 0.9);
+  padding-left: 100%;
+  box-sizing: content-box;
+}
+
+.ticker {
+  display: inline-block;
+  height: 4rem;
+  line-height: 4rem;
+  white-space: nowrap;
+  padding-right: 100%;
+  box-sizing: content-box;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: ticker;
+  animation-name: ticker;
+  -webkit-animation-duration: 30s;
+  animation-duration: 30s;
+}
+
+.ticker__item {
+  display: inline-block;
+
+  padding: 0 2rem;
+  font-size: 2rem;
+  color: white;
 }
