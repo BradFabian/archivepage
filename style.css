@@ -54,17 +54,19 @@ body {
   position: relative;
   list-style: none;
 }
-.tabs a {
+.tabs button {
   /* Make them block level
      and only as wide as they need */
   float: left;
   padding: 10px 40px;
   text-decoration: none;
-
+  border: none;
+  outline: none;
+  cursor: pointer;
   /* Default colors */
   color: black;
   background: #ddc385;
-
+  transition: 0.3s;
   /* Only round the top corners */
   -webkit-border-top-left-radius: 15px;
   -webkit-border-top-right-radius: 15px;
@@ -77,7 +79,7 @@ body {
   /* Highest, active tab is on top */
   z-index: 3;
 }
-.tabs .active a {
+.tabs .active button {
   /* Colors when tab is active */
   background: white;
   color: black;

@@ -10,24 +10,41 @@
 <body>
     
     <div class="container">
-        <div class="logo">
-            <span class="left__logo">Ribbon</span>
-            <span class="center__logo">Logo</span>
-            <span class="right__logo">Award</span>
-    
-            </div>
+        
+            <span class="logo"><img src="./img/output-onlinepngtools.png" alt="" srcset=""></span>
+            
         
            <div class="container__center">
            
 
             <ul class="tabs group">
-                <li class="active"><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#careers">Careers</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="active"><button onclick="openTab(event, 'home')">Home</button></li>
+                <li><button class="tablinks" onclick="openTab(event, 'about')">About</button></li>
+                <li><button class="tablinks" onclick="openTab(event, 'careers')">Careers</button></li>
+                <li><button class="tablinks" onclick="openTab(event, 'contact')">Contact</button></li>
             </ul>
             <main class="content">
                 
+            
+            <!-- Tab content -->
+<div id="home" class="tabcontent">
+    <h3>Home</h3>
+   
+  </div>
+  <div id="about" class="tabcontent">
+    <h3>About</h3>
+   
+  </div>
+  
+  <div id="careers" class="tabcontent">
+    <h3>Careers</h3>
+    
+  </div>
+  
+  <div id="contact" class="tabcontent">
+    <h3>Contact</h3>
+    
+  </div>
             </main>
 
 
@@ -41,6 +58,6 @@
     
  
         
-     
+     <script src="./script.js"></script>
 </body>
 </html>
