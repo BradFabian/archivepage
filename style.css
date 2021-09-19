@@ -37,7 +37,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 20%;
+  height: 35%;
 }
 .container__center {
   max-width: 50rem;
