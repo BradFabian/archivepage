@@ -1,6 +1,6 @@
 const openTab = (event, tabName) => {
-    let i, tabContent, tabLinks;
-
+    let i, tabContent, tabLinks, tabLocation;
+    tabLocation =  document.getElementById(tabName);
     tabContent = document.getElementsByClassName("tabcontent");
 
     for (i = 0; i < tabContent.length; i++){
@@ -13,9 +13,9 @@ const openTab = (event, tabName) => {
     tabLinks[i].className = tabLinks[i].className.replace(" active", "");
   }
 
-  console.log(tabName)
+  
 
-  document.getElementById(tabName).style.display = "block";
+  tabLocation.style.display = "block";
   event.currentTarget.className += " active";
 
 }
