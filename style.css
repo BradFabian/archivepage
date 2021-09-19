@@ -19,6 +19,7 @@ body {
   flex-direction: column;
   position: relative;
   background: linear-gradient(90deg, #fdbb2d 0%, #22c1c3 100%);
+
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -31,9 +32,16 @@ body {
   width: 100%;
   height: 20%;
 }
-
+.container__top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+}
 .container__center {
   max-width: 50rem;
+  margin: 1em;
 }
 .left__logo {
   position: absolute;
@@ -54,10 +62,18 @@ body {
   position: relative;
   list-style: none;
 }
-.tabs button {
+
+.active {
+  /* Colors when tab is active */
+  background: white !important;
+  color: black !important;
+  z-index: 3;
+}
+
+.tabs li button {
   /* Make them block level
      and only as wide as they need */
-  float: left;
+  display: flex;
   padding: 10px 40px;
   text-decoration: none;
   border: none;
@@ -76,12 +92,6 @@ body {
   border-top-right-radius: 15px;
 }
 
-.active {
-  /* Colors when tab is active */
-  background: white;
-  color: black;
-  z-index: 3;
-}
 .tabs li:before,
 .tabs li:after,
 .tabs li a:before,
@@ -97,4 +107,13 @@ body {
   width: 100%;
   height: 300px;
   box-shadow: 10px 5px 5px grey;
+}
+
+@media only screen and (max-width: 600px) {
+  .tabs li button {
+    padding: 5px 15px;
+  }
+  .content-middle {
+    width: 100%;
+  }
 }
